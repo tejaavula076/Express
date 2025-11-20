@@ -4,7 +4,11 @@ let port = 3000;
 const path = require("path");
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "/views"));
+app.set("views", [
+  path.join(__dirname, "views"),
+  path.join(__dirname, "includes")
+]);
+
 
 app.use(express.static(path.join(__dirname, 'public')))
 
