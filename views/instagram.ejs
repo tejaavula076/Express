@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insta EJS</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Practise Insta EJS</h1>
+    <h1>This page belongs to <%= dataOfThatUser.name %>
+    </h1>
+    <button>Follow</button>
+    <button>Message</button>
+    <p>Followers: <%= dataOfThatUser.followers %>
+            &nbsp; &nbsp; &nbsp; &nbsp; Following: <%= dataOfThatUser.following %>
+    </p>
+    <hr>
+
+    <% for(let gotposts of  dataOfThatUser.posts){ %>
+        <img src="<%= gotposts.image %>" alt="someimage">
+        <p>Likes: <%= gotposts.likes %>
+                &nbsp; &nbsp; &nbsp; &nbsp; Comments: <%= gotposts.comments %>
+        </p>
+        <% } %>
+
 </body>
+
 </html>
